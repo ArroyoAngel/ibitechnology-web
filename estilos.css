@@ -1,18 +1,26 @@
-/* IBI Technology — estilos compartidos */
+/* IBI Technology — estilos compartidos.
+   Colores y letras del manual de marca "monte y tajibo" (artifact IBI Technology, v2). */
 :root {
-  --ink: #0F2233;
-  --ink-2: #16304A;
-  --muted: #4B5A66;
-  --primary: #16525F;
-  --primary-dark: #0E3843;
-  --soft: #DDEFEC;
-  --soft-ink: #0F4A52;
-  --aqua: #9FDCD2;
-  --ground: #F4F3EF;
-  --card: #FFFFFF;
-  --line: #D8D6CF;
-  --title: "Bricolage Grotesque", system-ui, sans-serif;
-  --text: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --noche: #0F2A22;        /* noche: encabezado, hero, pie */
+  --ink: #14201B;          /* tinta */
+  --muted: #55615A;        /* tinta-suave */
+  --primary: #1C7451;      /* monte: botones, enlaces */
+  --primary-dark: #155A3E; /* monte al pasar el mouse */
+  --soft: #E2F2E8;         /* monte-suave */
+  --soft-ink: #1C7451;     /* texto sobre monte-suave */
+  --aqua: #5CC69A;         /* monte-vivo: acentos sobre noche */
+  --tajibo: #F2B705;       /* tajibo: un acento por pantalla */
+  --sobre-tajibo: #0F2A22;
+  --tajibo-suave: #FDF1C7;
+  --tajibo-texto: #7A5600;
+  --ground: #F6F7F2;       /* fondo */
+  --sunken: #EEF1E9;       /* superficie-hundida */
+  --card: #FFFFFF;         /* superficie */
+  --line: #E2E6DD;         /* linea */
+  --line-strong: #8A968F;  /* linea-fuerte */
+  --on-dark: #C3D1C9;      /* texto secundario sobre noche */
+  --title: "Sora", "Segoe UI", system-ui, sans-serif;
+  --text: "Figtree", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -32,18 +40,18 @@ h1, h2, h3 { font-family: var(--title); line-height: 1.1; letter-spacing: -0.02e
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
 
 /* Barra superior */
-.topbar { background: var(--ink); color: #fff; }
+.topbar { background: var(--noche); color: #fff; }
 .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; padding-bottom: 18px; }
 .brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-family: var(--title); font-weight: 700; font-size: 20px; }
 .brand:hover { color: #fff; }
-.brand-mark { width: 34px; height: 34px; border-radius: 9px; background: var(--aqua); color: var(--ink); display: grid; place-items: center; font-size: 16px; font-weight: 800; letter-spacing: -0.04em; }
+.brand-mark { width: 34px; height: 34px; border-radius: 9px; display: block; }
 .nav { display: flex; gap: 22px; }
-.nav a { color: #C9D6DF; text-decoration: none; font-size: 16px; }
+.nav a { color: var(--on-dark); text-decoration: none; font-size: 16px; }
 .nav a:hover { color: #fff; }
 @media (max-width: 640px) { .nav { display: none; } }
 
 /* Portada */
-.hero { background: var(--ink); color: #fff; padding: 56px 0 80px; }
+.hero { background: var(--noche); color: #fff; padding: 56px 0 80px; }
 .hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 48px; }
 .phone { width: 280px; border-radius: 32px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35); }
 /* Teléfono del inicio: pasa por capturas de las apps (6 × 4 s) */
@@ -73,12 +81,12 @@ h1, h2, h3 { font-family: var(--title); line-height: 1.1; letter-spacing: -0.02e
 }
 .eyebrow { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--aqua); margin: 0 0 16px; }
 .hero h1 { margin: 0; font-size: clamp(38px, 7vw, 64px); max-width: 15ch; }
-.hero p { margin: 20px 0 0; font-size: clamp(18px, 2.4vw, 21px); color: #C9D6DF; max-width: 46ch; }
+.hero p { margin: 20px 0 0; font-size: clamp(18px, 2.4vw, 21px); color: var(--on-dark); max-width: 46ch; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .btn { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 24px; border-radius: 14px; font-weight: 700; text-decoration: none; font-size: 17px; }
-.btn-light { background: var(--aqua); color: var(--ink); }
-.btn-light:hover { background: #B8E7DF; color: var(--ink); }
-.btn-ghost { border: 1.5px solid #3A5266; color: #fff; }
+.btn-light { background: var(--tajibo); color: var(--sobre-tajibo); }
+.btn-light:hover { background: #F5C02A; color: var(--sobre-tajibo); }
+.btn-ghost { border: 1.5px solid rgba(246, 247, 242, 0.45); color: #fff; }
 .btn-ghost:hover { border-color: var(--aqua); color: #fff; }
 .btn-primary { background: var(--primary); color: #fff; }
 .btn-primary:hover { background: var(--primary-dark); color: #fff; }
@@ -108,22 +116,22 @@ section + section { padding-top: 0; }
   .feature-body { padding: 24px; }
 }
 
-.soon { margin-top: 16px; border: 1.5px dashed #B5B2A9; border-radius: 20px; padding: 20px 24px; color: var(--muted); }
+.soon { margin-top: 16px; border: 1.5px dashed var(--line-strong); border-radius: 20px; padding: 20px 24px; color: var(--muted); }
 .soon strong { color: var(--ink); }
 
 /* Próximamente: tarjetas deshabilitadas */
 .soon-title { margin: 40px 0 16px; font-size: 22px; color: var(--muted); }
 .soon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-.soon-card { background: #EDECE7; border: 1.5px dashed #B5B2A9; border-radius: 20px; padding: 24px; color: var(--muted); cursor: not-allowed; user-select: none; }
+.soon-card { background: var(--sunken); border: 1.5px dashed var(--line-strong); border-radius: 20px; padding: 24px; color: var(--muted); cursor: not-allowed; user-select: none; }
 .soon-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
-.soon-head h4 { margin: 0; font-family: var(--title); font-size: 22px; color: #3E4A54; }
+.soon-head h4 { margin: 0; font-family: var(--title); font-size: 22px; color: #34413A; }
 .soon-head span { font-size: 15px; }
-.soon-icon { width: 52px; height: 52px; border-radius: 14px; background: #D8D6CF; color: #5E6A73; display: grid; place-items: center; flex-shrink: 0; }
+.soon-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--line); color: var(--muted); display: grid; place-items: center; flex-shrink: 0; }
 .soon-icon svg { width: 28px; height: 28px; }
-.soon-badge { margin-left: auto; align-self: flex-start; background: #fff; border: 1px solid #B5B2A9; border-radius: 999px; padding: 2px 10px; font-size: 13px !important; font-weight: 700; white-space: nowrap; }
+.soon-badge { margin-left: auto; align-self: flex-start; background: #fff; border: 1px solid var(--line-strong); border-radius: 999px; padding: 2px 10px; font-size: 13px !important; font-weight: 700; white-space: nowrap; }
 .soon-card p { margin: 0; font-size: 16px; }
 .soon-card .chips { margin: 14px 0 0; }
-.soon-card .chips li { background: #DEDCD5; color: #4B5A66; }
+.soon-card .chips li { background: var(--line); color: var(--muted); }
 .soon-note { margin: 16px 0 0; color: var(--muted); }
 
 /* Tarjetas */
@@ -133,6 +141,21 @@ section + section { padding-top: 0; }
 .card p { margin: 0; color: var(--muted); font-size: 16px; }
 .icon { width: 44px; height: 44px; border-radius: 12px; background: var(--soft); color: var(--primary); display: grid; place-items: center; }
 .icon svg { width: 24px; height: 24px; }
+
+/* Fotos del trabajo de campo (página de Mi Estanque) */
+.hero-foto { background: linear-gradient(rgba(15, 34, 51, 0.82), rgba(15, 34, 51, 0.82)), url("mi-estanque/fotos/estanques-aereo.jpg") center 40% / cover; }
+.card-foto { padding-top: 0; overflow: hidden; }
+.card-foto img { display: block; width: calc(100% + 48px); max-width: none; margin: 0 -24px 16px; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 30%; }
+/* Foto grande a la izquierda y 4 chicas en 2×2; todas cortadas a la misma grilla */
+.campo { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 260px 260px; gap: 16px; }
+.campo figure { position: relative; margin: 0; border-radius: 20px; overflow: hidden; }
+.campo-grande { grid-row: 1 / 3; }
+.campo img { width: 100%; height: 100%; object-fit: cover; }
+.campo figcaption { position: absolute; left: 12px; bottom: 12px; right: 12px; width: fit-content; max-width: calc(100% - 24px); background: rgba(15, 34, 51, 0.82); color: #fff; font-size: 14px; font-weight: 700; padding: 4px 12px; border-radius: 999px; }
+@media (max-width: 760px) {
+  .campo { grid-template-columns: 1fr 1fr; grid-template-rows: 260px 160px 160px; gap: 12px; }
+  .campo-grande { grid-column: 1 / -1; grid-row: auto; }
+}
 
 /* Pasos, capturas y planes (página de la app) */
 .step { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--soft); color: var(--primary); font-family: var(--title); font-weight: 800; font-size: 20px; }
@@ -149,9 +172,9 @@ section + section { padding-top: 0; }
   .shots { grid-template-columns: repeat(4, 64%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
   .shots figure { scroll-snap-align: start; }
 }
-.plan .price { font-family: var(--title); font-size: 44px; font-weight: 800; color: var(--primary); margin: 4px 0 8px; }
+.plan .price { font-family: var(--title); font-size: 44px; font-weight: 700; color: var(--primary); margin: 4px 0 8px; }
 .plan-main { border: 2px solid var(--primary); }
-.tag { display: inline-block; background: #FBE6D6; color: #7A2E06; border-radius: 999px; padding: 2px 12px; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.tag { display: inline-block; background: var(--tajibo-suave); color: var(--tajibo-texto); border-radius: 999px; padding: 2px 12px; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
 
 /* YaYa Eats (lleva su naranja de marca dentro de su página y su tarjeta) */
 .hero-yaya { background: #9A3412; }
@@ -172,14 +195,14 @@ section + section { padding-top: 0; }
 
 /* Equipo */
 .person { display: flex; gap: 16px; align-items: center; }
-.avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--ink); color: var(--aqua); display: grid; place-items: center; font-family: var(--title); font-weight: 700; font-size: 22px; flex-shrink: 0; }
+.avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--noche); color: var(--aqua); display: grid; place-items: center; font-family: var(--title); font-weight: 700; font-size: 22px; flex-shrink: 0; }
 .person h3 { margin: 0; }
 .person p { margin: 2px 0 0; }
 
 /* Contacto */
 .contact { background: var(--primary); color: #fff; border-radius: 24px; padding: 40px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
 .contact h2 { margin: 0; font-size: clamp(26px, 4vw, 34px); }
-.contact p { margin: 8px 0 0; color: #CFE6E3; }
+.contact p { margin: 8px 0 0; color: #D2EADD; }
 .contact .btn-light { background: #fff; }
 
 footer { padding: 32px 0 48px; color: var(--muted); font-size: 15px; }

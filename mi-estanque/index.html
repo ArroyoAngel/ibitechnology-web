@@ -8,14 +8,14 @@
 <link rel="icon" href="icono.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600..800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Figtree:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="../estilos.css">
 </head>
 <body>
 
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="../"><span class="brand-mark">ibi</span>IBI Technology</a>
+    <a class="brand" href="../"><img class="brand-mark" src="/favicon.svg" alt="">IBI Technology</a>
     <nav class="nav">
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#planes">Planes</a>
@@ -24,7 +24,7 @@
   </div>
 </header>
 
-<div class="hero">
+<div class="hero hero-foto">
   <div class="wrap hero-grid">
     <div>
       <div class="app-title">
@@ -58,17 +58,20 @@
         <h2>Del pesaje a la ración de cada día</h2>
       </div>
       <div class="grid steps">
-        <div class="card">
+        <div class="card card-foto">
+          <img src="fotos/biometria-red.jpg" alt="Productores sacando con red una muestra de peces del estanque" loading="lazy">
           <span class="step">1</span>
           <h3>Biometría</h3>
           <p>Una vez al mes pesas en un balde una muestra del 3 al 5 % de los peces.</p>
         </div>
-        <div class="card">
+        <div class="card card-foto">
+          <img src="fotos/tambaqui.jpg" alt="Un tambaquí recién sacado del estanque" loading="lazy">
           <span class="step">2</span>
           <h3>Biomasa</h3>
           <p>La app calcula sola el peso promedio y los kilos de peces del estanque.</p>
         </div>
-        <div class="card card-dark">
+        <div class="card card-dark card-foto">
+          <img src="fotos/pesaje-balde.jpg" alt="Productora midiendo el alimento junto al estanque" loading="lazy">
           <span class="step">3</span>
           <h3>Ración de hoy</h3>
           <p>Cuánto dar, en kilos y bolsas, repartido en 2 tomas al día.</p>
@@ -103,6 +106,22 @@
         <div class="card"><h3>Mortalidad y cosechas</h3><p>Y el FCA al cerrar el ciclo: cuánto alimento costó cada kilo de pescado.</p></div>
         <div class="card"><h3>Respaldo</h3><p>En tu propio Google Drive.</p></div>
         <div class="card"><h3>Planillas en Excel</h3><p>Con los formatos de registro del manual, para técnicos e instituciones.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="campo">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Hecha en el campo</h2>
+        <p>Mi Estanque nació junto al agua. Los ingenieros de Pacu Yachay y el equipo de IBI Technology la probaron con productores de pacú y tambaquí, en sus propios estanques.</p>
+      </div>
+      <div class="campo">
+        <figure class="campo-grande"><img src="fotos/equipo-productores.jpg" alt="El equipo registrando datos con productores junto al estanque" loading="lazy"><figcaption>Registrando datos con los productores</figcaption></figure>
+        <figure><img src="fotos/alimentacion.jpg" alt="Productora con la bolsa de alimento a orillas del estanque" loading="lazy"><figcaption>La ración, medida</figcaption></figure>
+        <figure><img src="fotos/aireador.jpg" alt="Aireador funcionando en un estanque" loading="lazy"><figcaption>Agua con oxígeno</figcaption></figure>
+        <figure><img src="fotos/estanque-orilla.jpg" alt="Productores a la orilla de un estanque rodeado de monte" loading="lazy"><figcaption>En sus propios estanques</figcaption></figure>
+        <figure><img src="fotos/aireador-dron.jpg" alt="Aireador de paletas visto desde el dron" loading="lazy"><figcaption>Desde el aire</figcaption></figure>
       </div>
     </div>
   </section>

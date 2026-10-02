@@ -1,4 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="16" fill="#0F2233"/>
-  <text x="32" y="43" text-anchor="middle" font-family="system-ui, Segoe UI, Arial, sans-serif" font-size="28" font-weight="800" fill="#9FDCD2" letter-spacing="-1">ibi</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="28" fill="#0F2A22"></rect>
+  <rect x="16" y="44" width="12" height="48" rx="6" fill="#F6F7F2"></rect>
+  <rect x="36" y="20" width="12" height="72" rx="6" fill="#F6F7F2"></rect>
+  <circle cx="60" cy="68" r="18" fill="none" stroke="#F6F7F2" stroke-width="12"></circle>
+  <rect x="92" y="44" width="12" height="48" rx="6" fill="#F6F7F2"></rect>
+  <circle cx="22" cy="30" r="7" fill="#5CC69A"></circle>
+  <circle cx="98" cy="30" r="7" fill="#F2B705"></circle>
 </svg>
