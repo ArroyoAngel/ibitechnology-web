@@ -1,0 +1,200 @@
+/* IBI Technology — estilos compartidos */
+:root {
+  --ink: #0F2233;
+  --ink-2: #16304A;
+  --muted: #4B5A66;
+  --primary: #16525F;
+  --primary-dark: #0E3843;
+  --soft: #DDEFEC;
+  --soft-ink: #0F4A52;
+  --aqua: #9FDCD2;
+  --ground: #F4F3EF;
+  --card: #FFFFFF;
+  --line: #D8D6CF;
+  --title: "Bricolage Grotesque", system-ui, sans-serif;
+  --text: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font: 17px/1.6 var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--primary); }
+a:hover { color: var(--primary-dark); }
+h1, h2, h3 { font-family: var(--title); line-height: 1.1; letter-spacing: -0.02em; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+/* Barra superior */
+.topbar { background: var(--ink); color: #fff; }
+.topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; padding-bottom: 18px; }
+.brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-family: var(--title); font-weight: 700; font-size: 20px; }
+.brand:hover { color: #fff; }
+.brand-mark { width: 34px; height: 34px; border-radius: 9px; background: var(--aqua); color: var(--ink); display: grid; place-items: center; font-size: 16px; font-weight: 800; letter-spacing: -0.04em; }
+.nav { display: flex; gap: 22px; }
+.nav a { color: #C9D6DF; text-decoration: none; font-size: 16px; }
+.nav a:hover { color: #fff; }
+@media (max-width: 640px) { .nav { display: none; } }
+
+/* Portada */
+.hero { background: var(--ink); color: #fff; padding: 56px 0 80px; }
+.hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 48px; }
+.phone { width: 280px; border-radius: 32px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35); }
+/* Teléfono del inicio: pasa por capturas de las apps (6 × 4 s) */
+.phone-stack { position: relative; aspect-ratio: 1 / 2; overflow: hidden; background: #fff; }
+.phone-stack img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; animation: pasar 24s infinite; }
+.phone-stack img:first-child { opacity: 1; }
+/* Las capturas de YaYa (720×1610) son más altas: centradas pierden la barra de estado y la de Android */
+.phone-stack img.captura-yaya { object-position: center; }
+.phone-stack img:nth-child(2) { animation-delay: 4s; }
+.phone-stack img:nth-child(3) { animation-delay: 8s; }
+.phone-stack img:nth-child(4) { animation-delay: 12s; }
+.phone-stack img:nth-child(5) { animation-delay: 16s; }
+.phone-stack img:nth-child(6) { animation-delay: 20s; }
+@keyframes pasar {
+  0% { opacity: 0; transform: translateX(28px); }
+  4% { opacity: 1; transform: none; }
+  16.7% { opacity: 1; transform: none; }
+  20.7% { opacity: 0; transform: translateX(-28px); }
+  100% { opacity: 0; transform: translateX(-28px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .phone-stack img { animation: none; }
+}
+@media (max-width: 760px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero .phone { display: none; }
+}
+.eyebrow { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--aqua); margin: 0 0 16px; }
+.hero h1 { margin: 0; font-size: clamp(38px, 7vw, 64px); max-width: 15ch; }
+.hero p { margin: 20px 0 0; font-size: clamp(18px, 2.4vw, 21px); color: #C9D6DF; max-width: 46ch; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 24px; border-radius: 14px; font-weight: 700; text-decoration: none; font-size: 17px; }
+.btn-light { background: var(--aqua); color: var(--ink); }
+.btn-light:hover { background: #B8E7DF; color: var(--ink); }
+.btn-ghost { border: 1.5px solid #3A5266; color: #fff; }
+.btn-ghost:hover { border-color: var(--aqua); color: #fff; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); color: #fff; }
+.btn-outline { border: 1.5px solid var(--primary); color: var(--primary); }
+
+/* Secciones */
+section { padding: 64px 0; }
+section + section { padding-top: 0; }
+.section-head { margin-bottom: 28px; }
+.section-head h2 { margin: 0; font-size: clamp(28px, 4vw, 36px); }
+.section-head p { margin: 8px 0 0; color: var(--muted); max-width: 60ch; }
+
+/* App destacada */
+.feature { display: grid; grid-template-columns: 1fr 1fr; background: var(--card); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; }
+.feature-art { background: #10202F; display: grid; place-items: center; }
+.feature-art img { width: 100%; height: auto; }
+.feature-body { padding: 32px; }
+.app-title { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.app-title img { width: 56px; height: 56px; border-radius: 14px; }
+.app-title h3 { margin: 0; font-size: 28px; }
+.app-title span { color: var(--muted); font-size: 15px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; padding: 0; list-style: none; }
+.chips li { background: var(--soft); color: var(--soft-ink); border-radius: 999px; padding: 4px 12px; font-size: 15px; }
+.app-links { margin: 16px 0 0; font-size: 15px; }
+@media (max-width: 760px) {
+  .feature { grid-template-columns: 1fr; }
+  .feature-body { padding: 24px; }
+}
+
+.soon { margin-top: 16px; border: 1.5px dashed #B5B2A9; border-radius: 20px; padding: 20px 24px; color: var(--muted); }
+.soon strong { color: var(--ink); }
+
+/* Próximamente: tarjetas deshabilitadas */
+.soon-title { margin: 40px 0 16px; font-size: 22px; color: var(--muted); }
+.soon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.soon-card { background: #EDECE7; border: 1.5px dashed #B5B2A9; border-radius: 20px; padding: 24px; color: var(--muted); cursor: not-allowed; user-select: none; }
+.soon-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.soon-head h4 { margin: 0; font-family: var(--title); font-size: 22px; color: #3E4A54; }
+.soon-head span { font-size: 15px; }
+.soon-icon { width: 52px; height: 52px; border-radius: 14px; background: #D8D6CF; color: #5E6A73; display: grid; place-items: center; flex-shrink: 0; }
+.soon-icon svg { width: 28px; height: 28px; }
+.soon-badge { margin-left: auto; align-self: flex-start; background: #fff; border: 1px solid #B5B2A9; border-radius: 999px; padding: 2px 10px; font-size: 13px !important; font-weight: 700; white-space: nowrap; }
+.soon-card p { margin: 0; font-size: 16px; }
+.soon-card .chips { margin: 14px 0 0; }
+.soon-card .chips li { background: #DEDCD5; color: #4B5A66; }
+.soon-note { margin: 16px 0 0; color: var(--muted); }
+
+/* Tarjetas */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+.card h3 { margin: 12px 0 6px; font-size: 20px; }
+.card p { margin: 0; color: var(--muted); font-size: 16px; }
+.icon { width: 44px; height: 44px; border-radius: 12px; background: var(--soft); color: var(--primary); display: grid; place-items: center; }
+.icon svg { width: 24px; height: 24px; }
+
+/* Pasos, capturas y planes (página de la app) */
+.step { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--soft); color: var(--primary); font-family: var(--title); font-weight: 800; font-size: 20px; }
+.card-dark { background: var(--primary); border-color: var(--primary); }
+.card-dark h3 { color: #fff; }
+.card-dark p { color: var(--soft); }
+.card-dark .step { background: var(--aqua); color: var(--ink); }
+.note { margin: 20px 0 0; color: var(--muted); }
+.shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.shots figure { margin: 0; text-align: center; }
+.shots img { width: 100%; border-radius: 24px; border: 1px solid var(--line); }
+.shots figcaption { margin-top: 10px; font-weight: 700; color: var(--primary); }
+@media (max-width: 760px) {
+  .shots { grid-template-columns: repeat(4, 64%); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+  .shots figure { scroll-snap-align: start; }
+}
+.plan .price { font-family: var(--title); font-size: 44px; font-weight: 800; color: var(--primary); margin: 4px 0 8px; }
+.plan-main { border: 2px solid var(--primary); }
+.tag { display: inline-block; background: #FBE6D6; color: #7A2E06; border-radius: 999px; padding: 2px 12px; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+
+/* YaYa Eats (lleva su naranja de marca dentro de su página y su tarjeta) */
+.hero-yaya { background: #9A3412; }
+.hero-yaya .app-title span { color: #FED7AA; }
+.hero-yaya .btn-light { background: #FFEDD5; color: #7C2D12; }
+.hero-yaya .btn-ghost { border-color: #FDBA74; }
+.btn-static { cursor: default; }
+.feature-art-yaya { background: #F97316; padding: 32px 0; }
+.feature-art-rider { background: #1D4ED8; padding: 32px 0; }
+.feature-art .phone { width: 220px; height: auto; }
+.panel-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
+.panel-shots figure { margin: 0; }
+.panel-shots img { width: 100%; border-radius: 14px; border: 1px solid var(--line); }
+.panel-shots figcaption { margin-top: 10px; font-weight: 700; color: var(--primary); text-align: center; }
+@media (max-width: 760px) {
+  .panel-shots { grid-template-columns: 1fr; }
+}
+
+/* Equipo */
+.person { display: flex; gap: 16px; align-items: center; }
+.avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--ink); color: var(--aqua); display: grid; place-items: center; font-family: var(--title); font-weight: 700; font-size: 22px; flex-shrink: 0; }
+.person h3 { margin: 0; }
+.person p { margin: 2px 0 0; }
+
+/* Contacto */
+.contact { background: var(--primary); color: #fff; border-radius: 24px; padding: 40px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.contact h2 { margin: 0; font-size: clamp(26px, 4vw, 34px); }
+.contact p { margin: 8px 0 0; color: #CFE6E3; }
+.contact .btn-light { background: #fff; }
+
+footer { padding: 32px 0 48px; color: var(--muted); font-size: 15px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+/* Páginas de texto (app y privacidad) */
+.page { padding: 40px 0 64px; }
+.page .wrap { max-width: 800px; }
+.back { display: inline-block; margin-bottom: 24px; font-weight: 700; text-decoration: none; }
+.page h1 { font-size: clamp(32px, 6vw, 46px); margin: 28px 0 8px; }
+.page h2 { font-size: 22px; margin: 36px 0 8px; color: var(--primary); }
+.lead { font-size: 19px; color: var(--muted); margin: 0 0 24px; }
+.page ul { padding-left: 22px; }
+.page li { margin: 6px 0; }
+.box { background: var(--soft); border-radius: 14px; padding: 16px 20px; margin: 24px 0; }
+.box p { margin: 0; }
+.banner { border-radius: 20px; overflow: hidden; }
+.meta { color: var(--muted); margin: 0 0 24px; }
