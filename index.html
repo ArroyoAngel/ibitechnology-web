@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IBI Technology</title>
-<meta name="description" content="IBI Technology: software y apps hechas en Bolivia para el trabajo de todos los días. Creadores de Mi Estanque, la calculadora piscícola para pacú y tambaquí.">
+<meta name="description" content="IBI Technology: software y apps hechas en Bolivia para el trabajo de todos los días. Creadores de Mi Estanque, la calculadora piscícola para pacú y tambaquí, y de YaYa Driver: delivery, taxi y carga en una sola app.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Figtree:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,900&family=Sora:wght@600;700&family=Figtree:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="/"><img class="brand-mark" src="/favicon.svg" alt="">IBI Technology</a>
+    <a class="brand" href="/"><img class="brand-mark" src="/marca/IBI-icono-invertido.svg" alt="" width="512" height="512">IBI Technology</a>
     <nav class="nav">
       <a href="#apps">Apps</a>
       <a href="#servicios">Qué hacemos</a>
@@ -40,9 +40,9 @@
       <img src="mi-estanque/pantallas/racion.png" alt="Mi Estanque: ración de hoy">
       <img src="mi-estanque/pantallas/estanques.png" alt="Mi Estanque: mis estanques" loading="lazy">
       <img src="mi-estanque/pantallas/crecimiento.png" alt="Mi Estanque: crecimiento" loading="lazy">
-      <img class="captura-yaya" src="yaya-eats/pantallas/inicio.jpg" alt="YaYa Eats: negocios cerca" loading="lazy">
-      <img class="captura-yaya" src="yaya-eats/pantallas/carrito.jpg" alt="YaYa Eats: tu carrito" loading="lazy">
-      <img class="captura-yaya" src="yaya-eats/pantallas/express.jpg" alt="YaYa Eats: Express" loading="lazy">
+      <img src="yaya-driver/pantallas/inicio.webp" alt="YaYa Driver: todos los servicios" loading="lazy">
+      <img src="yaya-driver/pantallas/taxi.webp" alt="YaYa Driver: taxi, ofreces tu precio" loading="lazy">
+      <img src="yaya-driver/pantallas/carga.webp" alt="YaYa Driver: ofertas de transporte de carga" loading="lazy">
     </div>
   </div>
 </div>
@@ -52,55 +52,64 @@
     <div class="wrap">
       <div class="section-head" style="margin-top:64px">
         <h2>Nuestras apps</h2>
-        <p>Herramientas para el trabajo de cada día: en el estanque, en la cocina y en la calle.</p>
+        <p>Herramientas para el trabajo de cada día: en el estanque y en la calle.</p>
       </div>
 
-      <article class="feature">
-        <div class="feature-art"><img src="mi-estanque/grafico.png" alt="Mi Estanque, calculadora piscícola para pacú y tambaquí"></div>
+      <article class="feature feature-app feature-estanque">
         <div class="feature-body">
           <div class="app-title">
             <img src="mi-estanque/icono.png" alt="">
             <div>
               <h3>Mi Estanque</h3>
-              <span>Calculadora piscícola</span>
+              <span>Calculadora piscícola · en Google Play</span>
             </div>
           </div>
-          <p>La calculadora piscícola para pacú y tambaquí. Registra la biometría y la app te dice cuánto alimento dar hoy, a qué hora y de qué tipo.</p>
-          <ul class="chips">
+          <h3 class="app-subtitulo">Cuánto alimento dar hoy, a qué hora y de qué tipo.</h3>
+          <p>La calculadora piscícola para pacú y tambaquí. Registras la biometría y la app calcula la ración del día, aunque no haya internet.</p>
+          <ul class="chips estanque-chips">
             <li>Ración diaria</li>
             <li>Biometría</li>
             <li>FCA</li>
             <li>Sin internet</li>
           </ul>
           <div class="actions" style="margin-top:0">
-            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=info.remanso.miestanque">Google Play</a>
-            <a class="btn btn-outline" href="mi-estanque/">Conocer más</a>
+            <a class="btn btn-estanque" href="https://play.google.com/store/apps/details?id=info.remanso.miestanque">Google Play</a>
+            <a class="btn btn-ghost" href="mi-estanque/">Conocer más</a>
           </div>
           <p class="app-links"><a href="mi-estanque/privacidad/">Política de privacidad</a></p>
         </div>
+        <div class="abanico" aria-hidden="true">
+          <img src="mi-estanque/pantallas/estanques.png" alt="" width="1200" height="2400" loading="lazy" style="--k:0">
+          <img src="mi-estanque/pantallas/racion.png" alt="" width="1200" height="2400" loading="lazy" style="--k:1">
+          <img src="mi-estanque/pantallas/crecimiento.png" alt="" width="1200" height="2400" loading="lazy" style="--k:2">
+        </div>
       </article>
 
-      <article class="feature" style="margin-top:16px">
-        <div class="feature-art feature-art-yaya"><img class="phone" src="yaya-eats/pantallas/inicio.jpg" alt="Pantalla de inicio de YaYa Eats"></div>
+      <article class="feature feature-app feature-yaya" style="margin-top:16px">
         <div class="feature-body">
           <div class="app-title">
-            <img src="yaya-eats/icono.png" alt="">
             <div>
-              <h3>YaYa Eats</h3>
-              <span>App y panel para negocios</span>
+              <span class="yaya-marca" role="img" aria-label="YaYa!"><svg viewBox="0 0 36 40" aria-hidden="true"><g stroke="#F56300" stroke-width="4.5" stroke-linecap="round"><path d="M14 10h20M6 20h26M12 30h18"/></g></svg><span class="yaya-logo"><span>Ya</span><b>Ya!</b></span></span>
+              <span>YaYa Driver · en desarrollo</span>
             </div>
           </div>
-          <p>Delivery de comida y compras de restaurantes, supermercados y minimarkets. Pago con QR o efectivo, modo repartidor en la misma app y un panel web para que cada negocio administre sus pedidos.</p>
-          <ul class="chips">
-            <li>Delivery y express</li>
-            <li>Pago QR</li>
-            <li>Repartidores</li>
-            <li>Panel web</li>
+          <h3 class="app-subtitulo">Cinco servicios para tu ciudad, desde una sola app.</h3>
+          <p>Delivery, taxi, transporte de carga, líneas y encomiendas para pueblos y ciudades de Bolivia. Empieza en San Julián, Santa Cruz.</p>
+          <ul class="chips yaya-chips">
+            <li style="--c:#F56300">Delivery</li>
+            <li style="--c:#2563EB">Taxi</li>
+            <li style="--c:#059669">Transporte de carga</li>
+            <li style="--c:#7C3AED">Líneas</li>
+            <li style="--c:#A0412D">Encomiendas</li>
           </ul>
           <div class="actions" style="margin-top:0">
-            <a class="btn btn-primary" href="yaya-eats/">Conocer más</a>
-            <a class="btn btn-outline" href="https://yaya.work/dashboard">Panel para negocios</a>
+            <a class="btn btn-yaya" href="yaya-driver/">Conocer YaYa Driver</a>
           </div>
+        </div>
+        <div class="abanico" aria-hidden="true">
+          <img src="yaya-driver/pantallas/delivery.webp" alt="" width="390" height="844" loading="lazy" style="--k:0">
+          <img src="yaya-driver/pantallas/inicio.webp" alt="" width="390" height="844" loading="lazy" style="--k:1">
+          <img src="yaya-driver/pantallas/taxi.webp" alt="" width="390" height="844" loading="lazy" style="--k:2">
         </div>
       </article>
 

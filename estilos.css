@@ -44,7 +44,7 @@ h1, h2, h3 { font-family: var(--title); line-height: 1.1; letter-spacing: -0.02e
 .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; padding-bottom: 18px; }
 .brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-family: var(--title); font-weight: 700; font-size: 20px; }
 .brand:hover { color: #fff; }
-.brand-mark { width: 34px; height: 34px; border-radius: 9px; display: block; }
+.brand-mark { width: 40px; height: 40px; display: block; flex-shrink: 0; }
 .nav { display: flex; gap: 22px; }
 .nav a { color: var(--on-dark); text-decoration: none; font-size: 16px; }
 .nav a:hover { color: #fff; }
@@ -58,8 +58,6 @@ h1, h2, h3 { font-family: var(--title); line-height: 1.1; letter-spacing: -0.02e
 .phone-stack { position: relative; aspect-ratio: 1 / 2; overflow: hidden; background: #fff; }
 .phone-stack img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; animation: pasar 24s infinite; }
 .phone-stack img:first-child { opacity: 1; }
-/* Las capturas de YaYa (720×1610) son más altas: centradas pierden la barra de estado y la de Android */
-.phone-stack img.captura-yaya { object-position: center; }
 .phone-stack img:nth-child(2) { animation-delay: 4s; }
 .phone-stack img:nth-child(3) { animation-delay: 8s; }
 .phone-stack img:nth-child(4) { animation-delay: 12s; }
@@ -176,22 +174,41 @@ section + section { padding-top: 0; }
 .plan-main { border: 2px solid var(--primary); }
 .tag { display: inline-block; background: var(--tajibo-suave); color: var(--tajibo-texto); border-radius: 999px; padding: 2px 12px; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
 
-/* YaYa Eats (lleva su naranja de marca dentro de su página y su tarjeta) */
-.hero-yaya { background: #9A3412; }
-.hero-yaya .app-title span { color: #FED7AA; }
-.hero-yaya .btn-light { background: #FFEDD5; color: #7C2D12; }
-.hero-yaya .btn-ghost { border-color: #FDBA74; }
-.btn-static { cursor: default; }
-.feature-art-yaya { background: #F97316; padding: 32px 0; }
-.feature-art-rider { background: #1D4ED8; padding: 32px 0; }
-.feature-art .phone { width: 220px; height: auto; }
-.panel-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
-.panel-shots figure { margin: 0; }
-.panel-shots img { width: 100%; border-radius: 14px; border: 1px solid var(--line); }
-.panel-shots figcaption { margin-top: 10px; font-weight: 700; color: var(--primary); text-align: center; }
-@media (max-width: 760px) {
-  .panel-shots { grid-template-columns: 1fr; }
-}
+/* Tarjeta de app: fondo oscuro con dos brillos, texto a la izquierda y abanico de pantallas a la derecha.
+   Cada app pone sus colores: --bg (fondo), --g1 y --g2 (brillos), --suave (texto secundario). */
+.feature-app { position: relative; background: var(--bg); border-color: var(--bg); color: #fff; }
+.feature-app::before, .feature-app::after { content: ""; position: absolute; border-radius: 50%; filter: blur(70px); opacity: .35; pointer-events: none; }
+.feature-app::before { width: 320px; height: 320px; background: var(--g1); top: -140px; right: -80px; }
+.feature-app::after { width: 280px; height: 280px; background: var(--g2); bottom: -150px; left: -60px; }
+.feature-app > * { position: relative; z-index: 1; }
+.feature-app .app-title span, .feature-app p { color: var(--suave); }
+.feature-app .app-title h3 { color: #fff; }
+.feature-app .app-links a { color: var(--suave); }
+.feature-app .app-links a:hover { color: #fff; }
+.feature-app .btn-ghost:hover { border-color: var(--g1); }
+.app-subtitulo { margin: 8px 0 0; font-size: clamp(22px, 2.6vw, 28px); color: #fff; }
+
+/* YaYa Driver: azul marino, naranja y los colores de cada servicio (manual de marca de YaYa) */
+.feature-yaya { --bg: #1B2A47; --g1: #F56300; --g2: #2563EB; --suave: #C7D2E3; }
+/* Mi Estanque: el azul noche de su gráfico, el verde agua de los peces y el tajibo */
+.feature-estanque { --bg: #10202F; --g1: #5CC69A; --g2: #F2B705; --suave: #BFD3D0; }
+.estanque-chips li { background: rgba(92, 198, 154, .16); color: #9FE3C4; font-weight: 700; }
+.btn-estanque { background: #5CC69A; color: #0F2A22; }
+.btn-estanque:hover { background: #7AD6AE; color: #0F2A22; }
+.app-title .yaya-marca { display: flex; align-items: center; gap: 3px; margin-bottom: 2px; }
+.yaya-marca svg { width: 22px; height: 25px; flex-shrink: 0; }
+.app-title .yaya-logo, .app-title .yaya-logo span { font: italic 900 34px/1 "Nunito", system-ui, sans-serif; letter-spacing: -2px; color: #fff; }
+.yaya-logo b { color: #F56300; font-weight: 900; }
+.yaya-chips li { background: var(--c); color: #fff; font-weight: 700; }
+.btn-yaya { background: #F56300; color: #fff; }
+.btn-yaya:hover { background: #DC5800; color: #fff; }
+/* Abanico de pantallas (como en "Así se ve" de la página de YaYa Driver) */
+.abanico { display: flex; justify-content: center; align-items: flex-end; padding: 40px 24px 0; overflow: hidden; }
+.abanico img { --r: calc((var(--k) - 1) * 8deg); width: 34%; height: auto; align-self: flex-end; margin: 0 -18px; rotate: var(--r); translate: 0 calc(var(--k) * (2 - var(--k)) * -22px + 26px); border-radius: 22px; border: 5px solid #0B1220; background: #0B1220; box-shadow: 0 24px 40px -14px rgba(0, 0, 0, .6); transform-origin: 50% 100%; transition: transform .4s ease; }
+.abanico img:nth-child(2) { z-index: 2; width: 38%; }
+.feature-app:hover .abanico img { transform: translateY(-8px); }
+.feature-app:hover .abanico img:nth-child(2) { transform: translateY(-16px) scale(1.03); }
+@media (prefers-reduced-motion: reduce) { .abanico img { transition: none; } }
 
 /* Equipo */
 .person { display: flex; gap: 16px; align-items: center; }
